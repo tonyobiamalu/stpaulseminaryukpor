@@ -1,0 +1,1322 @@
+
+/* =========================================================
+   ST. PAUL'S SEMINARY, UKPOR
+   HOMEPAGE STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #243447;
+    background: #ffffff;
+    line-height: 1.7;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: relative;
+    z-index: 1000;
+    background: #f8f2e5;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+    background: #102a43;
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+
+.top-bar-inner {
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.top-contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.top-contact a {
+    color: #ffffff;
+
+    transition: color .25s ease;
+}
+
+
+.top-contact a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   MAIN HEADER
+========================================================= */
+
+.main-header {
+    background: #f8f2e5;
+
+    border-bottom: 1px solid #ddd2bd;
+}
+
+
+.header-inner {
+    min-height: 105px;
+
+    display: grid;
+
+    grid-template-columns:
+        230px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #17324d;
+}
+
+
+.logo img {
+    width: 72px;
+    height: 72px;
+
+    object-fit: contain;
+}
+
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo-name strong {
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    line-height: 1.2;
+}
+
+
+.logo-name span {
+    color: #8a1f2d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.main-nav ul {
+    list-style: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.main-nav a {
+    position: relative;
+
+    display: inline-block;
+
+    padding: 10px 0;
+
+    color: #17324d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+    transition: color .25s ease;
+}
+
+
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 2px;
+
+    width: 0;
+    height: 2px;
+
+    background: #b08d26;
+
+    transform: translateX(-50%);
+
+    transition: width .25s ease;
+}
+
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: #8a1f2d;
+}
+
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 70%;
+}
+
+
+/* =========================================================
+   SIGN UP BUTTON
+========================================================= */
+
+.header-btn {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    background: #8a1f2d;
+
+    border: 1px solid #8a1f2d;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    transition: all .25s ease;
+}
+
+
+.header-btn:hover {
+    background: #6f1824;
+
+    border-color: #6f1824;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    background: transparent;
+
+    border: 1px solid #b08d26;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+}
+
+
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+
+    background: #17324d;
+
+    transition: all .3s ease;
+}
+
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero-section {
+    position: relative;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(16, 42, 67, .78),
+            rgba(16, 42, 67, .72)
+        ),
+        url("/images/hostel.png")
+        center / cover no-repeat;
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 42, 67, .85),
+            rgba(16, 42, 67, .45)
+        );
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.hero-text {
+    max-width: 750px;
+
+    color: #ffffff;
+}
+
+
+.hero-label,
+.section-label {
+    display: inline-block;
+
+    color: #c7a84b;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+.hero-text h1 {
+    margin: 18px 0;
+
+    font-size: clamp(42px, 6vw, 76px);
+
+    line-height: 1.05;
+
+    font-weight: 600;
+}
+
+
+.hero-text h1 span {
+    color: #d4af37;
+}
+
+
+.hero-text p {
+    max-width: 680px;
+
+    margin-bottom: 30px;
+
+    color: rgba(255,255,255,.92);
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.hero-buttons,
+.welcome-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+.primary-btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: #8a1f2d;
+
+    border: 1px solid #8a1f2d;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+    transition: all .25s ease;
+}
+
+
+.primary-btn:hover {
+    background: #6f1824;
+
+    transform: translateY(-2px);
+}
+
+
+.secondary-btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border: 1px solid #ffffff;
+
+    color: #ffffff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    transition: all .25s ease;
+}
+
+
+.secondary-btn:hover {
+    background: #ffffff;
+
+    color: #17324d;
+}
+
+
+/* =========================================================
+   ABOUT / WELCOME
+========================================================= */
+
+.welcome-section {
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+
+.welcome-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.welcome-content h2 {
+    margin: 15px 0 20px;
+
+    color: #17324d;
+
+    font-size: clamp(35px, 4vw, 52px);
+
+    line-height: 1.15;
+}
+
+
+.welcome-content h2 span {
+    color: #8a1f2d;
+}
+
+
+.welcome-content p {
+    margin-bottom: 15px;
+
+    color: #66788a;
+
+    font-size: 16px;
+}
+
+
+.text-btn {
+    padding: 13px;
+
+    color: #8a1f2d;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+}
+
+
+.text-btn span {
+    margin-left: 6px;
+
+    font-size: 18px;
+}
+
+
+.welcome-image {
+    position: relative;
+}
+
+
+.image-frame {
+    padding: 12px;
+
+    border: 1px solid #c9a94e;
+}
+
+
+.image-frame img {
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   FORMATION VALUES
+========================================================= */
+
+.values-section {
+    padding: 100px 0;
+
+    background: #f7f3ea;
+}
+
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    margin: 12px 0;
+
+    color: #17324d;
+
+    font-size: clamp(32px, 4vw, 48px);
+
+    line-height: 1.2;
+}
+
+
+.section-heading p {
+    color: #66788a;
+}
+
+
+.values-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.value-card {
+    padding: 35px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5dccb;
+
+    text-align: center;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.value-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.08);
+}
+
+
+.value-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #c9a94e;
+
+    border-radius: 50%;
+
+    color: #8a1f2d;
+
+    font-size: 23px;
+}
+
+
+.value-card h3 {
+    margin-bottom: 10px;
+
+    color: #17324d;
+}
+
+
+.value-card p {
+    color: #6b7c8d;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   HOSTELS
+========================================================= */
+
+.hostels-section {
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+
+.hostel-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+.hostel-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e2d8c7;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.06);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.hostel-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.12);
+}
+
+
+.hostel-image {
+    height: 245px;
+
+    overflow: hidden;
+}
+
+
+.hostel-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+
+.hostel-card:hover
+.hostel-image img {
+    transform: scale(1.05);
+}
+
+
+.hostel-content {
+    padding: 28px;
+}
+
+
+.hostel-level {
+    color: #8a1f2d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.hostel-content h3 {
+    margin: 7px 0;
+
+    color: #17324d;
+
+    font-size: 25px;
+}
+
+
+.hostel-content p {
+    margin-bottom: 20px;
+
+    color: #68798a;
+
+    font-size: 14px;
+}
+
+
+.hostel-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.hostel-links a {
+    padding: 9px 12px;
+
+    border: 1px solid #b08d26;
+
+    color: #8a1f2d;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    transition: all .25s ease;
+}
+
+
+.hostel-links a:hover {
+    background: #8a1f2d;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   CALL TO ACTION
+========================================================= */
+
+.cta-section {
+    padding: 90px 0;
+
+    background: #17324d;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+.cta-content {
+    max-width: 750px;
+}
+
+
+.cta-section h2 {
+    margin: 12px 0;
+
+    font-size: clamp(32px, 5vw, 50px);
+
+    line-height: 1.2;
+}
+
+
+.cta-section p {
+    margin-bottom: 25px;
+
+    color: rgba(255,255,255,.85);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    background: #0c2033;
+
+    color: #ffffff;
+}
+
+
+.footer-grid {
+    padding: 70px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr
+        1fr
+        1fr
+        1.3fr;
+
+    gap: 45px;
+}
+
+
+.footer-school img {
+    width: 90px;
+
+    margin-bottom: 18px;
+}
+
+
+.footer-school h3 {
+    margin-bottom: 5px;
+}
+
+
+.footer-school p {
+    color: #aebdca;
+
+    font-size: 14px;
+}
+
+
+.footer-column h4 {
+    margin-bottom: 18px;
+
+    color: #d4af37;
+
+    font-size: 16px;
+}
+
+
+.footer-column ul {
+    list-style: none;
+}
+
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+
+.footer-column a {
+    color: #c4d0da;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    transition: color .25s ease;
+}
+
+
+.footer-column a:hover {
+    color: #d4af37;
+}
+
+
+.contact-info li {
+    color: #c4d0da;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    border-top:
+        1px solid rgba(255,255,255,.1);
+}
+
+
+.footer-bottom-inner {
+    min-height: 65px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.footer-bottom p {
+    color: #91a3b3;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   STICKY HEADER
+========================================================= */
+
+.site-header.scrolled
+.main-header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.15);
+}
+
+
+.site-header.scrolled
+.logo img {
+    width: 58px;
+    height: 58px;
+}
+
+
+.site-header.scrolled
+.header-inner {
+    min-height: 78px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .header-inner {
+        grid-template-columns:
+            190px
+            1fr
+            auto;
+
+        gap: 20px;
+    }
+
+
+    .main-nav ul {
+        gap: 16px;
+    }
+
+
+    .main-nav a {
+        font-size: 11px;
+    }
+
+
+    .logo-name {
+        display: none;
+    }
+
+
+    .values-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .welcome-grid {
+        gap: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .top-bar {
+        display: none;
+    }
+
+
+    .header-inner {
+        min-height: 82px;
+
+        display: flex;
+
+        justify-content: space-between;
+    }
+
+
+    .logo img {
+        width: 62px;
+        height: 62px;
+    }
+
+
+    .main-nav {
+        display: none;
+    }
+
+
+    .main-nav.mobile-open {
+        display: block;
+
+        position: absolute;
+
+        top: 82px;
+
+        left: 0;
+        right: 0;
+
+        background: #f8f2e5;
+
+        border-top:
+            1px solid #ddd2bd;
+
+        box-shadow:
+            0 10px 25px rgba(0,0,0,.12);
+    }
+
+
+    .main-nav.mobile-open ul {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+    }
+
+
+    .main-nav.mobile-open li {
+        border-bottom:
+            1px solid #e1d7c5;
+    }
+
+
+    .main-nav.mobile-open a {
+        display: block;
+
+        padding: 16px 25px;
+
+        font-size: 13px;
+    }
+
+
+    .main-nav.mobile-open a::after {
+        display: none;
+    }
+
+
+    .header-btn {
+        display: none;
+    }
+
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* HERO */
+
+    .hero-section {
+        min-height: 600px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 44px;
+    }
+
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+
+    /* ABOUT */
+
+    .welcome-section {
+        padding: 70px 0;
+    }
+
+
+    .welcome-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .welcome-image {
+        order: -1;
+    }
+
+
+    .image-frame img {
+        height: 300px;
+    }
+
+
+    /* VALUES */
+
+    .values-section,
+    .hostels-section {
+        padding: 70px 0;
+    }
+
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* HOSTELS */
+
+    .hostel-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .footer-bottom-inner {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 20px 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 90%;
+    }
+
+
+    .hero-section {
+        min-height: 560px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .hero-buttons a {
+        text-align: center;
+    }
+
+
+    .welcome-buttons {
+        align-items: flex-start;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .hostel-links {
+        flex-direction: column;
+    }
+
+
+    .hostel-links a {
+        text-align: center;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+a:focus-visible,
+button:focus-visible {
+
+    outline:
+        3px solid #d4af37;
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        transition-duration: .01ms !important;
+
+        animation-duration: .01ms !important;
+    }
+
+}
+```
